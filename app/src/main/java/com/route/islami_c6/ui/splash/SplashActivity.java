@@ -1,10 +1,13 @@
-package com.route.islami_c6;
+package com.route.islami_c6.ui.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.route.islami_c6.ui.home.HomeActivity;
+import com.route.islami_c6.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -21,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void startHomeActivity() {
-        Intent intent = new Intent(this,HomeActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
         finish();
     }

@@ -1,14 +1,14 @@
-package com.route.islami_c6.ui.home.quran_fragment
+package com.route.islami_c6.ui.sura_details
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.route.islami_c6.R
+import java.util.*
 
-class SuraNamesAdapter(val items: Array<String>) :RecyclerView.Adapter<SuraNamesAdapter.ViewHolder>() {
+class SuraVerseAdapter(val items: ArrayList<String>) : RecyclerView.Adapter<SuraVerseAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -20,13 +20,13 @@ class SuraNamesAdapter(val items: Array<String>) :RecyclerView.Adapter<SuraNames
 
         //holder.suraNameTextView.setText(items.get(position))
         holder.suraNameTextView.text = items.get(position)
-        holder.itemView.setOnClickListener {
+        holder.suraNameTextView.setOnClickListener {
             onSuraNameClicked?.onItemClickListener(items.get(position), position)
         }
     }
     var onSuraNameClicked: OnItemClickListener? = null
     interface OnItemClickListener{
-       fun onItemClickListener(item: String, index: Int)
+        fun onItemClickListener(item: String, index: Int)
     }
     override fun getItemCount(): Int {
         return items.size
